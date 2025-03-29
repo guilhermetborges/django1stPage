@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+</head>
+<body>
+    <center>
+    <h1>produto</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preco</th>
+                <th>Estoque</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{produto.nome}}</td>
+                <td>{{produto.preco}}</td>
+                <td>{{produto.estoque}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button><a href="{% url 'index' %}">voltar</a></button>
+    </center>
+    
+</body>
+</html>

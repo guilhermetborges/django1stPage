@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>django 1 - index</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <center>
+    <h1>Comercce example</h1>
+
+    <img src="{% static 'images/articuno.jpg' %}" alt="logo here" width="200px" , height="200px">
+    <h2>{{nome}}</h2>
+
+    <p>{{sobrenome}}</p>
+    
+    <span>{{logado}}</span>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preco</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produto in produtos %}
+            <tr>
+                <td><a href="{% url 'produto' produto.id %}">{{produto.nome}}</td>
+                <td>{{produto.preco}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <button onclick="teste();"> button </button>
+    </center>
+
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
+    
+</body>
+</html>  
